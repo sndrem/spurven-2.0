@@ -1,5 +1,9 @@
 import {ExpressReceiver} from "@slack/bolt";
 import evoService from "./services/evoService";
+import {
+  hentAvgangstiderForStoppested,
+  ruterOptions,
+} from "./services/ruterService";
 
 require("dotenv").config();
 const {App} = require("@slack/bolt");
@@ -22,6 +26,20 @@ app.command("/evo", async ({command, ack, say}: any) => {
   evoService.sjekkKapasitet(async (data: any) => {
     await say(data);
   });
+});
+
+app.message(/thn/i, async ({say}) => {
+  hentAvgangstiderForStoppested(
+    ruterOptions.helsfyr,
+    async (responseTekst) => await say(responseTekst)
+  );
+});
+
+app.message(/tht/i, async ({say}) => {
+  hentAvgangstiderForStoppested(
+    ruterOptions.toyen,
+    async (responseTekst) => await say(responseTekst)
+  );
 });
 
 // Start appen
