@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sndrem/spurven-2.0#readme",
   "dependencies": {
     "@slack/bolt": "^3.12.1",
+    "cron": "^2.1.0",
     "date-fns": "^2.29.2",
     "dotenv": "^16.0.2",
     "request-promise": "^4.2.6"
