@@ -49,14 +49,14 @@ export const mittAnbud = (app: any) => {
 
   const tz = "Europe/Oslo";
   new CronJob(
-    "0 */1 8-16 * * MON,TUE,WED,THU,FRI",
+    "10/1 8-16 * * MON,TUE,WED,THU,FRI",
     hentMetrikker,
     null,
     true,
     tz
   ); // Hver ukedag hvert minutt mellom 08-16
   new CronJob(
-    "0 22 * * MON,TUE,WED,THU,FRI",
+    "0 8,22 * * MON,TUE,WED,THU,FRI",
     oppdateringAvAlleMetrikker,
     null,
     true,
