@@ -8,9 +8,9 @@ const evoService = {
       .then((data: any) => {
         const {current, max_capacity, percentageUsed} = JSON.parse(data);
         cb(
-          `Det er ${current}/${max_capacity} personer på Evo Bryn. Det tilsvarer ${Math.round(
+          `Det er *${current}/${max_capacity}* personer på Evo Bryn. Det tilsvarer *${Math.round(
             percentageUsed
-          )}%`
+          )}%*`
         );
       })
       .catch((error: any) => {
