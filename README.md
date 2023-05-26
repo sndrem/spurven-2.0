@@ -14,4 +14,4 @@ Rammeverket som brukes er [Bolt.js](https://slack.dev/bolt-js/tutorial/getting-s
 For å deploye må du være logget inn på fly.io
 
 1. `flyctl auth login`
-2. `flyctl deploy`
+2. `flyctl deploy --app spurven20 --local-only`
